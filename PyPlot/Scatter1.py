@@ -17,8 +17,12 @@ view_count = data['view_count']
 likes = data['likes']
 ratio = data['ratio']
 
-plt.scatter(view_count,likes, cmap='Greens',edgecolors='black',
+plt.scatter(view_count,likes, c=ratio, cmap='Greens',edgecolors='black',
             linewidths=1, alpha=0.75)
+
+cbar = plt.colorbar()
+cbar.set_label('Like/Dislike Ratio')
+
 plt.xscale('log')
 plt.yscale('log')
 plt.title('Trending YouTube Videos')
